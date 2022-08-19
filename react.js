@@ -1,14 +1,13 @@
-const baseRules = require('./helpers/base-rules');
-const reactRules = require('./helpers/react-rules');
 const commonConfig = require('./helpers/common-config');
+const overided = require('./helpers/overided-rules');
 
 module.exports = {
-    extends : ['airbnb', 'airbnb/hooks'],
+	extends: ['airbnb', 'airbnb/hooks'],
 
-    ...commonConfig,
-    
-    rules : {
-        ...baseRules,
-        ...reactRules,
-    }
-}
+	...commonConfig,
+
+	rules: {
+		...overided.base,
+		...overided.react,
+	},
+};
