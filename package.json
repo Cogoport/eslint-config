@@ -1,6 +1,6 @@
 {
   "name": "@cogoport/eslint-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ESLint Config by Cogoport",
   "main": "base.js",
   "repository": "git@github.com:Cogoport/eslint-config.git",
