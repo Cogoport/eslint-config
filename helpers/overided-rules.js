@@ -1,10 +1,14 @@
 const base = {
 	// js
-	indent                 : ['error', 'tab'],
-	'no-tabs'              : 'off',
-	'max-len'              : ['error', 120],
-	'no-use-before-define' : 'off',
-	'key-spacing'          : ['error', {
+	camelcase               : 'off',
+	'no-tabs'               : 'off',
+	'no-use-before-define'  : 'off',
+	'no-restricted-exports' : 'off',
+	'no-underscore-dangle'  : ['error'],
+	'object-curly-newline'  : ['error'],
+	indent                  : ['error', 'tab'],
+	'max-len'               : ['error', 120],
+	'key-spacing'           : ['error', {
 		align: {
 			on          : 'colon',
 			beforeColon : true,
@@ -12,8 +16,6 @@ const base = {
 			mode        : 'strict',
 		},
 	}],
-	'object-curly-newline'  : ['error'],
-	'no-restricted-exports' : 'off',
 
 	// import
 	'import/no-extraneous-dependencies' : 'off',
@@ -32,15 +34,19 @@ const base = {
 
 const react = {
 	// react
-	'react/jsx-indent'                    : ['error', 'tab'],
 	'react/jsx-filename-extension'        : 'off',
 	'react/prop-types'                    : 'off',
 	'react/jsx-props-no-spreading'        : 'off',
 	'react/forbid-prop-types'             : 'off',
 	'react/react-in-jsx-scope'            : 'off',
 	'react/no-unstable-nested-components' : 'off',
+	'react/jsx-indent-props'              : ['error', 'tab'],
+	'react/jsx-indent'                    : ['error', 'tab', {
+		checkAttributes          : true,
+		indentLogicalExpressions : true,
+	}],
 	// jsx-a11y
-	'jsx-a11y/media-has-caption'          : 'off',
+	'jsx-a11y/media-has-caption': 'off',
 };
 
 const css = {};
