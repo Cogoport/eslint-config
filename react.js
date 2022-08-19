@@ -3,7 +3,7 @@ const reactRules = require('./helpers/react-rules');
 const commonConfig = require('./helpers/common-config');
 
 module.exports = {
-    extends : ['airbnb', 'airbnb-hooks'],
+    extends : ['airbnb', 'airbnb/hooks'],
 
     ...commonConfig,
     
