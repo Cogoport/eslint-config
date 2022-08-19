@@ -1,0 +1,20 @@
+{
+  "name": "@cogoport/eslint-config",
+  "version": "1.0.0",
+  "description": "ESLint Config by Cogoport",
+  "main": "base.js",
+  "repository": "git@github.com:Cogoport/eslint-config.git",
+  "author": "Rudraprasad Das <brayn003@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.22.0"
+  }
+}
