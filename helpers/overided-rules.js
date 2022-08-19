@@ -32,6 +32,7 @@ const base = {
 
 const react = {
 	// react
+	'react/jsx-indent'                    : ['error', 'tab'],
 	'react/jsx-filename-extension'        : 'off',
 	'react/prop-types'                    : 'off',
 	'react/jsx-props-no-spreading'        : 'off',
@@ -42,9 +43,12 @@ const react = {
 	'jsx-a11y/media-has-caption'          : 'off',
 };
 
+const css = {};
+
 const overided = {
 	base,
 	react,
+	css,
 };
 
 module.exports = overided;
