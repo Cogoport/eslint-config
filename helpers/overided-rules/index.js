@@ -1,12 +1,14 @@
+const sharedRules = require('./shared-rules');
+
 const base = {
 	// js
 	camelcase               : 'off',
 	'no-tabs'               : 'off',
-	'no-use-before-define'  : 'off',
+	indent                  : sharedRules.indent,
+	'no-use-before-define'  : sharedRules['no-use-before-define'],
 	'no-restricted-exports' : 'off',
 	'no-underscore-dangle'  : ['error'],
 	'object-curly-newline'  : ['error'],
-	indent                  : ['error', 'tab'],
 	'max-len'               : ['error', 120],
 	'key-spacing'           : ['error', {
 		align: {
@@ -32,6 +34,14 @@ const base = {
 	],
 };
 
+const typescript = {
+	// typescript overrides
+	indent                                    : 'off',
+	'@typescript-eslint/indent'               : sharedRules.indent,
+	'no-use-before-define'                    : 'off',
+	'@typescript-eslint/no-use-before-define' : sharedRules['no-use-before-define'],
+};
+
 const react = {
 	// react
 	'react/jsx-filename-extension'        : 'off',
@@ -49,12 +59,10 @@ const react = {
 	'jsx-a11y/media-has-caption': 'off',
 };
 
-const css = {};
-
 const overided = {
 	base,
 	react,
-	css,
+	typescript,
 };
 
 module.exports = overided;
