@@ -1,12 +1,9 @@
-const commonConfig = require('./helpers/common-config');
 const overided = require('./helpers/overided-rules');
 
 module.exports = {
-	extends: ['airbnb-base'],
-
-	...commonConfig,
-
-	rules: {
+	extends       : ['airbnb-base'],
+	parserOptions : { ecmaVersion: 2020 },
+	rules         : {
 		...overided.base,
 	},
 };
