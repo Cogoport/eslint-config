@@ -1,4 +1,4 @@
-const sharedRules = require('./shared-rules');
+const sharedRules = require('./shared');
 
 const base = {
 	// js
@@ -44,6 +44,7 @@ const typescript = {
 
 const react = {
 	// react
+	'react/button-has-type'               : 'off',
 	'react/jsx-filename-extension'        : 'off',
 	'react/prop-types'                    : 'off',
 	'react/jsx-props-no-spreading'        : 'off',

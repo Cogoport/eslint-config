@@ -1,6 +1,6 @@
 const path = require('path');
 
-const overided = require('./helpers/overided-rules');
+const overrides = require('./overrides');
 
 module.exports = {
 	extends       : ['airbnb-base', 'airbnb-typescript/base'],
@@ -8,7 +8,7 @@ module.exports = {
 	parserOptions : { project: path.resolve(process.cwd(), 'tsconfig.json'), tsconfigRootDir: __dirname },
 	plugins       : ['@typescript-eslint'],
 	rules         : {
-		...overided.base,
-		...overided.typescript,
+		...overrides.base,
+		...overrides.typescript,
 	},
 };

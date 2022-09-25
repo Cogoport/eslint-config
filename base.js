@@ -1,9 +1,9 @@
-const overided = require('./helpers/overided-rules');
+const overrides = require('./overrides');
 
 module.exports = {
 	extends       : ['airbnb-base'],
 	parserOptions : { ecmaVersion: 2020 },
 	rules         : {
-		...overided.base,
+		...overrides.base,
 	},
 };
