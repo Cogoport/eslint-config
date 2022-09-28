@@ -59,7 +59,8 @@ const react = {
 	}],
 
 	// jsx-a11y
-	'jsx-a11y/media-has-caption': 'off',
+	'jsx-a11y/media-has-caption'            : 'off',
+	'jsx-a11y/click-events-have-key-events' : 'off',
 };
 
 const overided = {
