@@ -61,6 +61,7 @@ const react = {
 	// jsx-a11y
 	'jsx-a11y/media-has-caption'            : 'off',
 	'jsx-a11y/click-events-have-key-events' : 'off',
+	'jsx-a11y/label-has-associated-control' : 'off',
 };
 
 const overided = {
