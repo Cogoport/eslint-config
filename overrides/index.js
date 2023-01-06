@@ -8,7 +8,6 @@ const base = {
 	'no-use-before-define'  : sharedRules['no-use-before-define'],
 	'no-restricted-exports' : 'off',
 	'no-underscore-dangle'  : ['error'],
-	'object-curly-newline'  : ['error'],
 	'max-len'               : ['error', 120],
 	'key-spacing'           : ['error', {
 		align: {
@@ -17,6 +16,12 @@ const base = {
 			afterColon  : true,
 			mode        : 'strict',
 		},
+	}],
+	'object-curly-newline': ['error', {
+		ObjectExpression  : { minProperties: 8, multiline: true, consistent: true },
+		ObjectPattern     : { minProperties: 8, multiline: true, consistent: true },
+		ImportDeclaration : { minProperties: 8, multiline: true, consistent: true },
+		ExportDeclaration : { minProperties: 8, multiline: true, consistent: true },
 	}],
 
 	// import
