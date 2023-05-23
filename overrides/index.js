@@ -71,13 +71,11 @@ const react = {
 
 };
 
-const cogoAdmin={
-
+const cogoAdmin = {
 	'max-lines-per-function'                : ['error', MAXIMUM_LENGTH],
 	'no-magic-numbers'                      : ['error', { ignoreDefaultValues: true }],
 	'custom-eslint-rules/naming-convention' : 'error',
-
-}
+};
 
 const overided = {
 	base,
