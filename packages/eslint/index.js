@@ -10,7 +10,7 @@ module.exports = {
 	rules: {
 		'custom-rules-matching': {
 			meta: {
-				name           : 'custom-eslint-plugin-custom',
+				name           : 'eslint-plugin-custom-rules',
 				version        : '1.0.0',
 				type           : 'problem',
 				hasSuggestions : true,
