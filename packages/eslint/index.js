@@ -18,14 +18,25 @@ module.exports = {
 			},
 			create: (context) => ({
 				VariableDeclaration(node) {
-					const { init = {}, id = {} } = node?.declarations[DEFAULT_ELEMENT]|| {};
-					
-					if(node?.kind==='const'){
+					const { init = {}, id = {} } = node?.declarations[DEFAULT_ELEMENT] || {};
+
+					if (node?.kind === 'const') {
 						const { name = '' } = id;
 
 						const { type = undefined, properties = [], elements = [] } = init || {};
-					
-							if (type === 'Literal') {
+
+						if (type === 'Literal') {
+							if (!isValidName(name, node.kind)) {
+								context.report({
+									node,
+									message: `Variable name ${name} should be in UPPER_CASE`,
+								});
+							}
+						}
+
+						if (type === 'ObjectExpression') {
+							const objectNamingCondition = properties.find((item) => item?.value?.type !== 'Literal');
+							if (!objectNamingCondition) {
 								if (!isValidName(name, node.kind)) {
 									context.report({
 										node,
@@ -33,30 +44,18 @@ module.exports = {
 									});
 								}
 							}
-		
-							if (type === 'ObjectExpression') {
-								const objectNamingCondition = properties.find((item) => item?.value?.type !== 'Literal');
-								if (!objectNamingCondition) {
-									if (!isValidName(name, node.kind)) {
-										context.report({
-											node,
-											message: `Variable name ${name} should be in UPPER_CASE`,
-										});
-									}
+						}
+						if (type === 'ArrayExpression') {
+							const arrayNamingCondition = elements.find((item) => item?.value?.type !== 'Literal');
+							if (!arrayNamingCondition) {
+								if (!isValidName(name, node.kind)) {
+									context.report({
+										node,
+										message: `Variable name ${name} should be in UPPER_CASE`,
+									});
 								}
 							}
-							if (type === 'ArrayExpression') {
-								const arrayNamingCondition = elements.find((item) => item?.value?.type !== 'Literal');
-								if (!arrayNamingCondition) {
-									if (!isValidName(name, node.kind)) {
-										context.report({
-											node,
-											message: `Variable name ${name} should be in UPPER_CASE`,
-										});
-									}
-								}
-							}
-						
+						}
 					}
 				},
 			}),
