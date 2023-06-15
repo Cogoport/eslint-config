@@ -1,3 +1,4 @@
+const MAXIMUM_LENGTH = 250;
 const sharedRules = require('./shared');
 
 const base = {
@@ -67,12 +68,20 @@ const react = {
 	'jsx-a11y/media-has-caption'            : 'off',
 	'jsx-a11y/click-events-have-key-events' : 'off',
 	'jsx-a11y/label-has-associated-control' : 'off',
+
+};
+
+const cogoAdmin = {
+	'max-lines-per-function'                : ['error', MAXIMUM_LENGTH],
+	'no-magic-numbers'                      : ['error', { ignoreDefaultValues: true }],
+	'custom-eslint-rules/naming-convention' : 'error',
 };
 
 const overided = {
 	base,
 	react,
 	typescript,
+	cogoAdmin,
 };
 
 module.exports = overided;
