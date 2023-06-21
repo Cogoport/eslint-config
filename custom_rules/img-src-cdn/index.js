@@ -60,7 +60,6 @@ module.exports = {
 
 				return {
 					VariableDeclarator(node) {
-						console.log(node);
 						if (node.init && isTypeLiteral(node.init) && isTypeofValueString(node.init.value)) {
 							declaredVariable = node;
 						}
