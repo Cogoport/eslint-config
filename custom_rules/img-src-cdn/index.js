@@ -2,7 +2,7 @@ const INCEMENT_OF_INDEX_IN_LOOP_BY = 1;
 
 const MIN_ARRAY_LENGTH_FOR_LOOP = 0;
 
-const URL_TO_CHECK = 'https://cdn.cogoport.io';
+const URL_TO_CHECK = ['https://cdn.cogoport.io', 'https://cogoport-production.sgp1.digitaloceanspaces.com'];
 
 const ERROR_MESSAGE = 'Move image url to global constants and use it from their.';
 
@@ -21,7 +21,7 @@ const handleShowUrlError = (node, context) => (context.report({
 }));
 
 const checkIsUrlPresent = (node, context, value) => {
-	if (value?.includes(URL_TO_CHECK))handleShowUrlError(node, context);
+	if (URL_TO_CHECK.some((u) => value?.includes(u)))handleShowUrlError(node, context);
 };
 
 function checkProperties(properties, context) {
@@ -62,10 +62,6 @@ module.exports = {
 				schema: [],
 			},
 			create(context) {
-				if (context.getFilename().includes(GLOBAL_CONSTANT_FILE_PATH)) {
-					return {};
-				}
-
 				let declaredVariable = null;
 
 				return {
@@ -86,12 +82,9 @@ module.exports = {
 						if (['Image', 'img'].includes(node.name.name)) {
 							const srcAttribute = node.attributes.find((attr) => attr.name.name === 'src');
 
-							if (srcAttribute && srcAttribute.value.value?.includes(URL_TO_CHECK)
+							if (srcAttribute && URL_TO_CHECK.some((u) => srcAttribute.value.value?.includes(u))
                              && !declaredVariable) {
-								context.report({
-									node    : srcAttribute,
-									message : ERROR_MESSAGE,
-								});
+								handleShowUrlError(srcAttribute, context);
 							} else if (srcAttribute) {
 								const importStatements = context.getSourceCode()
 									.ast.body.filter((statement) => statement.type === 'ImportDeclaration');
@@ -101,10 +94,7 @@ module.exports = {
 										?.includes(GLOBAL_CONSTANT_FILE_PATH));
 
 								if (!hasMatchingImport) {
-									context.report({
-										node    : declaredVariable,
-										message : ERROR_MESSAGE,
-									});
+									handleShowUrlError(declaredVariable, context);
 								}
 							}
 						}
