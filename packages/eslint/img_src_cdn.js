@@ -50,54 +50,53 @@ function checkElements(elements, context) {
 }
 
 module.exports = {
-	
-    meta: {
-        type : 'warn',
-        docs : {
-            description : 'Enforce importing image src from global constants if it includes a specific URL',
-            category    : 'Best Practices',
-            recommended : true,
-        },
-        schema: [],
-    },
-    create(context) {
-        let declaredVariable = null;
+	meta: {
+		type : 'warn',
+		docs : {
+			description : 'Enforce importing image src from global constants if it includes a specific URL',
+			category    : 'Best Practices',
+			recommended : true,
+		},
+		schema: [],
+	},
+	create(context) {
+		let declaredVariable = null;
 
-        return {
-            VariableDeclarator(node) {
-                if (node.init && isTypeLiteral(node.init) && isTypeofValueString(node.init.value)) {
-                    declaredVariable = node;
-                }
+		return {
+			VariableDeclarator(node) {
+				if (node.init && isTypeLiteral(node.init) && isTypeofValueString(node.init.value)) {
+					declaredVariable = node;
+				}
 
-                if (node.init && ['ObjectExpression', 'ArrayExpression'].includes(node.init.type)) {
-                    if (node.init.type === 'ObjectExpression') {
-                        checkProperties(node.init.properties, context);
-                    } else {
-                        checkElements(node.init.elements, context);
-                    }
-                }
-            },
-            JSXOpeningElement(node) {
-                if (['Image', 'img'].includes(node.name.name)) {
-                    const srcAttribute = node.attributes.find((attr) => attr.name.name === 'src');
+				if (node.init && ['ObjectExpression', 'ArrayExpression'].includes(node.init.type)) {
+					if (node.init.type === 'ObjectExpression') {
+						checkProperties(node.init.properties, context);
+					} else {
+						checkElements(node.init.elements, context);
+					}
+				}
+			},
+			JSXOpeningElement(node) {
+				if (['Image', 'img'].includes(node.name.name)) {
+					const srcAttribute = node.attributes.find((attr) => attr.name.name === 'src');
 
-                    if (srcAttribute && URL_TO_CHECK.some((u) => srcAttribute.value.value?.includes(u))
+					if (srcAttribute && URL_TO_CHECK.some((u) => srcAttribute.value.value?.includes(u))
                         && !declaredVariable) {
-                        handleShowUrlError(srcAttribute, context);
-                    } else if (srcAttribute) {
-                        const importStatements = context.getSourceCode()
-                            .ast.body.filter((statement) => statement.type === 'ImportDeclaration');
+						handleShowUrlError(srcAttribute, context);
+					} else if (srcAttribute) {
+						const importStatements = context.getSourceCode()
+							.ast.body.filter((statement) => statement.type === 'ImportDeclaration');
 
-                        const hasMatchingImport = importStatements
-                            .some((statement) => statement.source.value
-                                ?.includes(GLOBAL_CONSTANT_FILE_PATH));
+						const hasMatchingImport = importStatements
+							.some((statement) => statement.source.value
+								?.includes(GLOBAL_CONSTANT_FILE_PATH));
 
-                        if (!hasMatchingImport) {
-                            handleShowUrlError(declaredVariable, context);
-                        }
-                    }
-                }
-            },
-        };
-    },
-}
+						if (!hasMatchingImport) {
+							handleShowUrlError(declaredVariable, context);
+						}
+					}
+				}
+			},
+		};
+	},
+};
