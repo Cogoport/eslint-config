@@ -9,7 +9,6 @@ specifiers:
   eslint-config-airbnb-typescript: ^17.0.0
   eslint-import-resolver-custom-alias: ^1.3.0
   eslint-plugin-cypress: ^2.12.1
-  eslint-plugin-img-src-cdn: file:custom_rules/img-src-cdn
   eslint-plugin-import: ^2.26.0
   eslint-plugin-jsx-a11y: ^6.6.1
   eslint-plugin-react: ^7.30.1
@@ -25,7 +24,6 @@ dependencies:
   eslint-config-airbnb-typescript: 17.0.0_dqfqiconmwwuo6fe366ar32ati
   eslint-import-resolver-custom-alias: 1.3.0_fkfqfehjtk7sk2efaqbgxsuasa
   eslint-plugin-cypress: 2.12.1_eslint@8.24.0
-  eslint-plugin-img-src-cdn: file:custom_rules/img-src-cdn
   eslint-plugin-import: 2.26.0_gofx6msuqd4luqedfouzks2s4u
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.24.0
   eslint-plugin-react: 7.31.8_eslint@8.24.0
@@ -1618,9 +1616,3 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  file:custom_rules/img-src-cdn:
-    resolution: {directory: custom_rules/img-src-cdn, type: directory}
-    name: img-src-cdn
-    version: 0.0.0
-    dev: false
