@@ -67,11 +67,6 @@ const react = {
 	'jsx-a11y/media-has-caption'            : 'off',
 	'jsx-a11y/click-events-have-key-events' : 'off',
 	'jsx-a11y/label-has-associated-control' : 'off',
-
-	// custom-rules
-	'img-src-cdn/img-src-cdn'         : 'warn',
-	'regex-check/regex-check'         : 'warn',
-	'nbsp-ensp-check/nbsp-ensp-check' : 'warn',
 };
 
 const overided = {
