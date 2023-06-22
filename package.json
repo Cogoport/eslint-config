@@ -20,8 +20,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-img-src-cdn":"file:custom_rules/img-src-cdn",
     "eslint-plugin-regex-check":"file:custom_rules/regex-check",
-    "eslint-plugin-nbsp-ensp-check":"file:custom_rules/nbsp-ensp-check"
-
+    "eslint-plugin-nbsp-ensp-check":"file:custom_rules/nbsp-ensp-check",
+    "eslint-plugin-is-empty-use-check":"file:custom_rules/is-empty-use-check"
   },
   "devDependencies": {
     "eslint": "^8.23.0"

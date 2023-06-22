@@ -69,9 +69,10 @@ const react = {
 	'jsx-a11y/label-has-associated-control' : 'off',
 
 	// custom-rules
-	'img-src-cdn/img-src-cdn'         : 'warn',
-	'regex-check/regex-check'         : 'warn',
-	'nbsp-ensp-check/nbsp-ensp-check' : 'warn',
+	'img-src-cdn/img-src-cdn'               : 'warn',
+	'regex-check/regex-check'               : 'warn',
+	'nbsp-ensp-check/nbsp-ensp-check'       : 'warn',
+	'is-empty-use-check/is-empty-use-check' : 'warn',
 };
 
 const overided = {

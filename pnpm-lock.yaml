@@ -11,6 +11,7 @@ specifiers:
   eslint-plugin-cypress: ^2.12.1
   eslint-plugin-img-src-cdn: file:custom_rules/img-src-cdn
   eslint-plugin-import: ^2.26.0
+  eslint-plugin-is-empty-use-check: file:custom_rules/is-empty-use-check
   eslint-plugin-jsx-a11y: ^6.6.1
   eslint-plugin-nbsp-ensp-check: file:custom_rules/nbsp-ensp-check
   eslint-plugin-react: ^7.30.1
@@ -29,6 +30,7 @@ dependencies:
   eslint-plugin-cypress: 2.12.1_eslint@8.24.0
   eslint-plugin-img-src-cdn: file:custom_rules/img-src-cdn
   eslint-plugin-import: 2.26.0_gofx6msuqd4luqedfouzks2s4u
+  eslint-plugin-is-empty-use-check: file:custom_rules/is-empty-use-check
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.24.0
   eslint-plugin-nbsp-ensp-check: file:custom_rules/nbsp-ensp-check
   eslint-plugin-react: 7.31.8_eslint@8.24.0
@@ -1626,6 +1628,12 @@ packages:
   file:custom_rules/img-src-cdn:
     resolution: {directory: custom_rules/img-src-cdn, type: directory}
     name: img-src-cdn
+    version: 0.0.0
+    dev: false
+
+  file:custom_rules/is-empty-use-check:
+    resolution: {directory: custom_rules/is-empty-use-check, type: directory}
+    name: is-empty-use-check
     version: 0.0.0
     dev: false
 
