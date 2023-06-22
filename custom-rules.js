@@ -14,5 +14,7 @@ module.exports = {
 		'custom-rules/custom-rules-matching' : 'error',
 		'custom-rules/img-src-cdn'           : 'warn',
 		'custom-rules/regex-check'           : 'warn',
+		'custom-rules/nbsp-ensp-check'       : 'warn',
+		'custom-rules/is-empty-use-check'    : 'warn',
 	},
 };

@@ -1,5 +1,4 @@
 module.exports = {
-
 	meta: {
 		type : 'warn',
 		docs : {
