@@ -6,11 +6,7 @@ module.exports = {
 	extends       : ['airbnb', 'airbnb/hooks', 'airbnb-typescript'],
 	parser        : '@typescript-eslint/parser',
 	parserOptions : { project: path.resolve(process.cwd(), 'tsconfig.json'), tsconfigRootDir: __dirname },
-<<<<<<< HEAD
-	plugins       : ['@typescript-eslint', 'img-src-cdn', 'regex-check', 'is-empty-use-check'],
-=======
 	plugins       : ['@typescript-eslint'],
->>>>>>> nbsp-check
 	rules         : {
 		...overrides.base,
 		...overrides.react,
