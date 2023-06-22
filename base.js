@@ -1,5 +1,9 @@
-const baseConfig = require('./base');
+const overrides = require('./overrides');
 
 module.exports = {
-	...baseConfig,
-}
+	extends       : ['airbnb-base'],
+	parserOptions : { ecmaVersion: 2020 },
+	rules         : {
+		...overrides.base,
+	},
+};
