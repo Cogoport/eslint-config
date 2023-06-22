@@ -2,10 +2,11 @@ const overrides = require('./overrides');
 
 const MAXIMUM_LENGTH = 250;
 module.exports = {
-	extends       : ['airbnb', 'airbnb/hooks'],
-	plugins       : ['custom-rules'],
-	parserOptions : { ecmaVersion: 2020 },
-	rules         : {
+	extends        : ['airbnb', 'airbnb/hooks'],
+	plugins        : ['custom-rules'],
+	parserOptions  : { ecmaVersion: 2020 },
+	ignorePatterns : ['**/globalization/*.js'],
+	rules          : {
 		...overrides.base,
 		...overrides.react,
 		'max-lines-per-function'             : ['error', MAXIMUM_LENGTH],
