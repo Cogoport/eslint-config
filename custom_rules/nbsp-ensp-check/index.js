@@ -19,7 +19,7 @@ module.exports = {
 						if (hasNonBreakingSpace) {
 							context.report({
 								node,
-								message: 'Non-breaking space (nbsp;) is not allowed.',
+								message: 'Non-breaking space (nbsp;) is not allowed. Use string literal (``) instead.',
 							});
 						}
 					},
