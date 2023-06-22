@@ -4,13 +4,19 @@ const MIN_ARRAY_LENGTH_FOR_LOOP = 0;
 
 const URL_TO_CHECK = 'https://cdn.cogoport.io';
 
+const ERROR_MESSAGE = 'Move image url to global constants and use it from their.';
+
+const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants/globals.js';
+
 const isTypeofValueString = (value) => typeof value === 'string';
+
 const isTypeLiteral = (value) => value?.type === 'Literal';
+
 const isTypeObject = (value) => value?.type === 'ObjectExpression';
 
 const handleShowUrlError = (node, context) => (context.report({
 	node,
-	message : 'Import URL from global_constants',
+	message : ERROR_MESSAGE,
 	loc     : node.loc,
 }));
 
@@ -56,6 +62,10 @@ module.exports = {
 				schema: [],
 			},
 			create(context) {
+				if (context.getFilename().includes(GLOBAL_CONSTANT_FILE_PATH)) {
+					return {};
+				}
+
 				let declaredVariable = null;
 
 				return {
@@ -80,20 +90,20 @@ module.exports = {
                              && !declaredVariable) {
 								context.report({
 									node    : srcAttribute,
-									message : 'Import the image source from a global constant',
+									message : ERROR_MESSAGE,
 								});
-							} else {
+							} else if (srcAttribute) {
 								const importStatements = context.getSourceCode()
 									.ast.body.filter((statement) => statement.type === 'ImportDeclaration');
 
 								const hasMatchingImport = importStatements
 									.some((statement) => statement.source.value
-										?.includes('globalization/constants/globals'));
+										?.includes(GLOBAL_CONSTANT_FILE_PATH));
 
 								if (!hasMatchingImport) {
 									context.report({
 										node    : declaredVariable,
-										message : 'Import the image source from a global constant',
+										message : ERROR_MESSAGE,
 									});
 								}
 							}
