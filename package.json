@@ -18,7 +18,9 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-img-src-cdn":"file:custom_rules/img-src-cdn"
+    "eslint-plugin-img-src-cdn":"file:custom_rules/img-src-cdn",
+    "eslint-plugin-regex-check":"file:custom_rules/regex-check"
+
   },
   "devDependencies": {
     "eslint": "^8.23.0"
