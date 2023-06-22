@@ -8,7 +8,7 @@ module.exports = {
 					category    : 'Best Practices',
 					recommended : true,
 				},
-				schema: [], // no options
+				schema: [],
 			},
 
 			create(context) {
