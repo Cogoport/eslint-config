@@ -1,4 +1,4 @@
-const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants/globals.js';
+const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants';
 
 module.exports = {
 	rules: {
@@ -22,7 +22,7 @@ module.exports = {
 						if (node.regex) {
 							context.report({
 								node,
-								message: 'Move regex pattern to global contants and use it from their',
+								message: 'Move regex pattern to global geo contants and use it from their',
 							});
 						}
 					},
