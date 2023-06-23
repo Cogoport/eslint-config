@@ -19,5 +19,6 @@ module.exports = {
 		'custom-rules/uuid-check'                  : 'warn',
 		'custom-rules/email-check'                 : 'warn',
 		'custom-rules/cl-for-merging-styles-class' : 'warn',
+		'custom-rules/date-time-format-check'      : 'warn',
 	},
 };
