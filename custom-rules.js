@@ -16,5 +16,7 @@ module.exports = {
 		'custom-rules/regex-check'           : 'warn',
 		'custom-rules/nbsp-ensp-check'       : 'warn',
 		'custom-rules/is-empty-use-check'    : 'warn',
+		'custom-rules/uuid-check'            : 'warn',
+		'custom-rules/email-check'           : 'warn',
 	},
 };
