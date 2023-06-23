@@ -1,3 +1,4 @@
+const check_element_role_button = require('./check_element_role_button');
 const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
@@ -19,5 +20,6 @@ module.exports = {
 		'email-check'                 : email_check,
 		'cl-for-merging-styles-class' : cl_for_merging_styles_class,
 		'date-time-format-check'      : date_time_format_check,
+		'check-element-role-button'   : check_element_role_button,
 	},
 };
