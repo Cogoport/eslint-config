@@ -92,7 +92,7 @@ module.exports = {
 								?.includes(GLOBAL_CONSTANT_FILE_PATH));
 
 						if (!hasMatchingImport) {
-							handleShowUrlError(declaredVariable, context);
+							handleShowUrlError(node, context);
 						}
 					}
 				}
