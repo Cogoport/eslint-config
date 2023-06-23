@@ -20,5 +20,6 @@ module.exports = {
 		'custom-rules/email-check'                 : 'warn',
 		'custom-rules/cl-for-merging-styles-class' : 'warn',
 		'custom-rules/date-time-format-check'      : 'warn',
+		'custom-rules/check-element-role-button'   : 'warn',
 	},
 };
