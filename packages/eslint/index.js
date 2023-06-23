@@ -3,6 +3,7 @@ const img_src_cdn = require('./img_src_cdn');
 const is_empty_use_check = require('./is_empty_use_check');
 const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
+const zeroth_index_import = require('./zeroth_index_import');
 
 module.exports = {
 	rules: {
@@ -11,5 +12,6 @@ module.exports = {
 		'regex-check'           : regex_check,
 		'nbsp-ensp-check'       : nbsp_ensp_check,
 		'is-empty-use-check'    : is_empty_use_check,
+		'zeroth-index-import'   : zeroth_index_import,
 	},
 };
