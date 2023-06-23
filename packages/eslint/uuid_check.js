@@ -17,7 +17,7 @@ module.exports = {
 				if (typeof node.value === 'string' && UUID_REGEX.test(node.value)) {
 					context.report({
 						node,
-						message: 'UUID detected. Please review and ensure its proper usage.',
+						message: 'UUID detected. Move the uuid to geo contants.',
 					});
 				}
 			},
