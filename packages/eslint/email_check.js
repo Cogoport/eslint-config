@@ -16,7 +16,9 @@ module.exports = {
 	create(context) {
 		return {
 			Literal(node) {
-				if (typeof node.value === 'string' && EMAIL_REGEX.some((e) => e.test(node.value))) {
+				if (typeof node.value === 'string'
+				&& node.value?.includes('@')
+				&& EMAIL_REGEX.some((e) => e.test(node.value))) {
 					context.report({
 						node,
 						message: 'Email address: "{{email}}" detected.'
