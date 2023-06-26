@@ -6,7 +6,8 @@ module.exports = {
 	meta: {
 		type : 'warn',
 		docs : {
-			description : 'Enforce importing the zeroth index from global constants if it is an array or string',
+			description:
+                'Enforce importing the zeroth index from global constants if it is an array or string',
 			category    : 'Best Practices',
 			recommended : true,
 		},
@@ -14,13 +15,20 @@ module.exports = {
 	},
 	create(context) {
 		const sourceCode = context.getSourceCode();
+		let declaredZeroVariable = null;
 
 		return {
+			VariableDeclarator(node) {
+				if (node.init.value === ARRAY_FIRST_ELEMENT) {
+					declaredZeroVariable = node.id.name;
+				}
+			},
 			MemberExpression(node) {
 				if (
-					node.property.type === 'Literal'
+					(node.property.type === 'Literal'
 					&& node.property.value === ARRAY_FIRST_ELEMENT
-					&& sourceCode.getText(node.property) === '0'
+					&& sourceCode.getText(node.property) === '0')
+					|| node.property.name === declaredZeroVariable
 				) {
 					context.report({
 						node,
