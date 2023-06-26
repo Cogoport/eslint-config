@@ -6,7 +6,7 @@ const checkSequence = (current, sequence) => {
 
 	const tempHookSeq = HOOK_SEQUENCE.slice(0, currentIndexInSeq);
 
-	const tempSeq = sequence?.filter((i) => tempHookSeq.includes(i) || i !== current);
+	const tempSeq = sequence?.filter((i) => !(i === current || tempHookSeq.includes(i)));
 
 	return !tempSeq?.length;
 };

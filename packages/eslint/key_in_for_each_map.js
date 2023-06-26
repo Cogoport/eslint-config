@@ -1,4 +1,4 @@
-const isNodeTypeJSX = (type) => type === 'JSXElement';
+const isNodeTypeJSX = (type) => ['JSXFragment', 'JSXElement'].includes(type);
 const isNodeTypeIdentifier = (type) => type === 'Identifier';
 
 const findKeyAttribute = (attributes) => {

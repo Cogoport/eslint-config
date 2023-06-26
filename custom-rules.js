@@ -22,7 +22,7 @@ module.exports = {
 		'custom-rules/date-time-format-check'      : 'warn',
 		'custom-rules/check-element-role-button'   : 'warn',
 		'custom-rules/key-as-function'             : 'warn',
-		'custom-rules/key-in-for-each'             : 'warn',
+		'custom-rules/key-in-for-each-map'         : 'warn',
 		'custom-rules/zeroth-index-import'         : 'warn',
 		'custom-rules/hook-sequence'               : 'warn',
 		'custom-rules/component-pascal'            : 'warn',
