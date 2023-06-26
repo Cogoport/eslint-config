@@ -3,6 +3,7 @@ const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
 const email_check = require('./email_check');
+const hook_sequence = require('./hook_sequence');
 const img_src_cdn = require('./img_src_cdn');
 const is_empty_use_check = require('./is_empty_use_check');
 const key_as_function = require('./key_as_function');
@@ -27,5 +28,6 @@ module.exports = {
 		'key-in-for-each'             : key_in_for_each,
 		'key-as-function'             : key_as_function,
 		'zeroth-index-import'         : zeroth_index_import,
+		'hook-sequence'               : hook_sequence,
 	},
 };

@@ -24,5 +24,6 @@ module.exports = {
 		'custom-rules/key-as-function'             : 'warn',
 		'custom-rules/key-in-for-each'             : 'warn',
 		'custom-rules/zeroth-index-import'         : 'warn',
+		'custom-rules/hook-sequence'               : 'warn',
 	},
 };
