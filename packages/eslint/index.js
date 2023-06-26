@@ -1,8 +1,10 @@
 const check_element_role_button = require('./check_element_role_button');
 const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
+const component_pascal = require('./component_pascal');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
 const email_check = require('./email_check');
+const hook_sequence = require('./hook_sequence');
 const img_src_cdn = require('./img_src_cdn');
 const is_empty_use_check = require('./is_empty_use_check');
 const key_as_function = require('./key_as_function');
@@ -11,7 +13,6 @@ const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
 const zeroth_index_import = require('./zeroth_index_import');
-const component_pascal = require('./component_pascal');
 
 module.exports = {
 	rules: {
@@ -28,6 +29,7 @@ module.exports = {
 		'key-in-for-each'             : key_in_for_each,
 		'key-as-function'             : key_as_function,
 		'zeroth-index-import'         : zeroth_index_import,
-		'component-pascal'            : component_pascal
+		'hook-sequence'               : hook_sequence,
+		'component-pascal'            : component_pascal,
 	},
 };
