@@ -1,5 +1,3 @@
-// eslint-plugin-custom-rules/index.js
-
 const ERROR_MESSAGE = 'Default value should be provided for useState';
 
 module.exports = {
@@ -15,14 +13,12 @@ module.exports = {
 
 	create(context) {
 		return {
-			VariableDeclarator(node) {
-				if (
-					node.init
-                && node.init.callee
-                && node.init.callee.name === 'useState'
+			CallExpression(node) {
+				// console.log(node.callee.name);
+				if (node.callee.name === 'useState'
 				) {
-					const [initialValue] = node.init.arguments;
-					if (!initialValue || (initialValue.type === 'Literal' && initialValue.value === null)) {
+					const [initialValue] = node.arguments;
+					if (!initialValue || (initialValue.length === 0)) {
 						context.report({
 							node,
 							message: ERROR_MESSAGE,
