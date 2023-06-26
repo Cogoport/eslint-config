@@ -1,9 +1,11 @@
 const check_element_role_button = require('./check_element_role_button');
 const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
+const component_pascal = require('./component_pascal');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
 const default_usestate = require('./default_usestate');
 const email_check = require('./email_check');
+const hook_sequence = require('./hook_sequence');
 const img_src_cdn = require('./img_src_cdn');
 const is_empty_use_check = require('./is_empty_use_check');
 const key_as_function = require('./key_as_function');
@@ -29,5 +31,7 @@ module.exports = {
 		'key-as-function'             : key_as_function,
 		'zeroth-index-import'         : zeroth_index_import,
 		'default-usestate'            : default_usestate,
+		'hook-sequence'               : hook_sequence,
+		'component-pascal'            : component_pascal,
 	},
 };
