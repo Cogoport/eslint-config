@@ -39,22 +39,35 @@ module.exports = {
 	},
 	create(context) {
 		return {
-
 			CallExpression(node) {
-				if (node.callee.property?.name === 'push') {
-					const { variables = [] } = context.getScope();
+				if (['push', 'map'].includes(node.callee.property?.name)) {
+					if (node.callee.property?.name === 'push') {
+						const { variables = [] } = context.getScope();
+						const firstArg = node.arguments?.[0] || {};
 
-					const firstArg = node.arguments?.[0] || {};
+						if (isNodeTypeIdentifier(firstArg?.type)) {
+							if (checkIsVariablePushedIsJsx(variables, firstArg.name)) {
+								handleError(context, node);
+							}
+						}
 
-					if (isNodeTypeIdentifier(firstArg?.type)) {
-						if (checkIsVariablePushedIsJsx(variables, firstArg.name)) {
-							handleError(context, node);
+						if (isNodeTypeJSX(firstArg?.type)) {
+							if (findKeyAttribute(firstArg?.openingElement?.attributes)) {
+								handleError(context, node);
+							}
 						}
 					}
 
-					if (isNodeTypeJSX(firstArg?.type)) {
-						if (findKeyAttribute(firstArg?.openingElement?.attributes)) {
-							handleError(context, node);
+					if (node.callee.property?.name === 'map') {
+						const firstArg = node?.arguments?.[0];
+
+						if (isNodeTypeIdentifier(firstArg?.body?.type)) {
+							if (checkIsVariablePushedIsJsx(
+								context.getScope()?.upper?.variables,
+								firstArg?.body?.name,
+							)) {
+								handleError(context, node);
+							}
 						}
 					}
 				}
