@@ -14,7 +14,6 @@ module.exports = {
 	create(context) {
 		return {
 			CallExpression(node) {
-				// console.log(node.callee.name);
 				if (node.callee.name === 'useState'
 				) {
 					const [initialValue] = node.arguments;
