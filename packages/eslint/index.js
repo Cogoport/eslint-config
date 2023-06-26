@@ -11,6 +11,7 @@ const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
 const zeroth_index_import = require('./zeroth_index_import');
+const component_pascal = require('./component_pascal');
 
 module.exports = {
 	rules: {
@@ -27,5 +28,6 @@ module.exports = {
 		'key-in-for-each'             : key_in_for_each,
 		'key-as-function'             : key_as_function,
 		'zeroth-index-import'         : zeroth_index_import,
+		'component-pascal'            : component_pascal
 	},
 };
