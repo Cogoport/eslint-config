@@ -1,5 +1,6 @@
 const check_element_role_button = require('./check_element_role_button');
 const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
+const component_pascal = require('./component_pascal');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
 const email_check = require('./email_check');
@@ -26,6 +27,7 @@ module.exports = {
 		'check-element-role-button'   : check_element_role_button,
 		'key-in-for-each'             : key_in_for_each,
 		'key-as-function'             : key_as_function,
+		'component-pascal'            : component_pascal,
 		'zeroth-index-import'         : zeroth_index_import,
 	},
 };
