@@ -8,6 +8,7 @@ const is_empty_use_check = require('./is_empty_use_check');
 const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
+const zeroth_index_import = require('./zeroth_index_import');
 
 module.exports = {
 	rules: {
@@ -21,5 +22,6 @@ module.exports = {
 		'cl-for-merging-styles-class' : cl_for_merging_styles_class,
 		'date-time-format-check'      : date_time_format_check,
 		'check-element-role-button'   : check_element_role_button,
+		'zeroth-index-import'         : zeroth_index_import,
 	},
 };
