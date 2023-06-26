@@ -12,6 +12,7 @@ const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
 const zeroth_index_import = require('./zeroth_index_import');
 const component_pascal = require('./component_pascal');
+const variable_name_check = require('./variable_name_check');
 
 module.exports = {
 	rules: {
@@ -28,6 +29,7 @@ module.exports = {
 		'key-in-for-each'             : key_in_for_each,
 		'key-as-function'             : key_as_function,
 		'zeroth-index-import'         : zeroth_index_import,
-		'component-pascal'            : component_pascal
+		'component-pascal'            : component_pascal,
+		'variable-name-check'         : variable_name_check,
 	},
 };

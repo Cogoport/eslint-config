@@ -4,7 +4,7 @@ const MIN_ARRAY_LENGTH_FOR_LOOP = 0;
 
 const URL_TO_CHECK = ['https://cdn.cogoport.io', 'https://cogoport-production.sgp1.digitaloceanspaces.com'];
 
-const ERROR_MESSAGE = 'Move image url to global constants and use it from their.';
+const ERROR_MESSAGE = 'Move image url to global constants and use it from there.';
 
 const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants/globals.js';
 
