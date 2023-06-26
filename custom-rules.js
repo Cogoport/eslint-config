@@ -23,5 +23,6 @@ module.exports = {
 		'custom-rules/check-element-role-button'   : 'warn',
 		'custom-rules/key-as-function'             : 'warn',
 		'custom-rules/key-in-for-each'             : 'warn',
+		'custom-rules/zeroth-index-import'         : 'warn',
 	},
 };

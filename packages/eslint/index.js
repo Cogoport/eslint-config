@@ -10,6 +10,7 @@ const key_in_for_each = require('./key_in_for_each');
 const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
+const zeroth_index_import = require('./zeroth_index_import');
 
 module.exports = {
 	rules: {
@@ -25,5 +26,6 @@ module.exports = {
 		'check-element-role-button'   : check_element_role_button,
 		'key-in-for-each'             : key_in_for_each,
 		'key-as-function'             : key_as_function,
+		'zeroth-index-import'         : zeroth_index_import,
 	},
 };
