@@ -5,6 +5,8 @@ const date_time_format_check = require('./date_time_format_check');
 const email_check = require('./email_check');
 const img_src_cdn = require('./img_src_cdn');
 const is_empty_use_check = require('./is_empty_use_check');
+const key_as_function = require('./key_as_function');
+const key_in_for_each = require('./key_in_for_each');
 const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
@@ -21,5 +23,7 @@ module.exports = {
 		'cl-for-merging-styles-class' : cl_for_merging_styles_class,
 		'date-time-format-check'      : date_time_format_check,
 		'check-element-role-button'   : check_element_role_button,
+		'key-in-for-each'             : key_in_for_each,
+		'key-as-function'             : key_as_function,
 	},
 };

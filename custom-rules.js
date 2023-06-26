@@ -21,5 +21,7 @@ module.exports = {
 		'custom-rules/cl-for-merging-styles-class' : 'warn',
 		'custom-rules/date-time-format-check'      : 'warn',
 		'custom-rules/check-element-role-button'   : 'warn',
+		'custom-rules/key-as-function'             : 'warn',
+		'custom-rules/key-in-for-each'             : 'warn',
 	},
 };
