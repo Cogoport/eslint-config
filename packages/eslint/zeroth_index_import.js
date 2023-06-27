@@ -20,16 +20,17 @@ module.exports = {
 
 		return {
 			VariableDeclarator(node) {
-				if (node.init.value === ARRAY_FIRST_ELEMENT) {
-					ZERO_VALUE_VARIABLES.push(node.id.name);
+				if (node?.init?.value === ARRAY_FIRST_ELEMENT) {
+					ZERO_VALUE_VARIABLES.push(node?.id?.name);
 				}
 			},
 			MemberExpression(node) {
+				const { property = {} } = node || {};
 				if (
-					(node.property.type === 'Literal'
-					&& node.property.value === ARRAY_FIRST_ELEMENT
-					&& sourceCode.getText(node.property) === '0')
-					|| ZERO_VALUE_VARIABLES.includes(node.property.name)
+					(property.type === 'Literal'
+					&& property?.value === ARRAY_FIRST_ELEMENT
+					&& sourceCode.getText(property) === '0')
+					|| ZERO_VALUE_VARIABLES.includes(property.name)
 				) {
 					context.report({
 						node,
