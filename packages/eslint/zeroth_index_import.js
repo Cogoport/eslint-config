@@ -2,6 +2,8 @@ const ARRAY_FIRST_ELEMENT = 0;
 
 const ERROR_MESSAGE = 'Import the zeroth index from global constants instead of declaring it in the file';
 
+const ZERO_VALUE_VARIABLES = [];
+
 module.exports = {
 	meta: {
 		type : 'warn',
@@ -15,12 +17,11 @@ module.exports = {
 	},
 	create(context) {
 		const sourceCode = context.getSourceCode();
-		let declaredZeroVariable = null;
 
 		return {
 			VariableDeclarator(node) {
 				if (node.init.value === ARRAY_FIRST_ELEMENT) {
-					declaredZeroVariable = node.id.name;
+					ZERO_VALUE_VARIABLES.push(node.id.name);
 				}
 			},
 			MemberExpression(node) {
@@ -28,7 +29,7 @@ module.exports = {
 					(node.property.type === 'Literal'
 					&& node.property.value === ARRAY_FIRST_ELEMENT
 					&& sourceCode.getText(node.property) === '0')
-					|| node.property.name === declaredZeroVariable
+					|| ZERO_VALUE_VARIABLES.includes(node.property.name)
 				) {
 					context.report({
 						node,
