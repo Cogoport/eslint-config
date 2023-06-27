@@ -12,8 +12,9 @@ module.exports = {
 	create(context) {
 		return {
 			ReturnStatement(node) {
-				if (node.argument.type === 'JSXElement') {
-					const isPascal = /^([A-Z][a-z0-9]*)+$/.test(node.parent.parent.parent.id.name);
+				if (['JSXFragment', 'JSXElement'].includes(node.argument?.type) && node.parent?.parent?.id?.name) {
+					const isPascal = /^([A-Z][a-z0-9]*)+$/.test(node.parent?.parent?.id?.name);
+
 					if (!isPascal) {
 						context.report({
 							node,
