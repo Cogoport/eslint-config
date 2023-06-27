@@ -28,5 +28,6 @@ module.exports = {
 		'custom-rules/hook-sequence'               : 'warn',
 		'custom-rules/variable-name-check'         : 'warn',
 		'custom-rules/component-pascal-props'      : 'warn',
+		'custom-rules/no-hook-conditional-import'  : 'warn',
 	},
 };
