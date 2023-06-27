@@ -3,6 +3,7 @@ const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
 const component_pascal = require('./component_pascal');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
+const default_usestate = require('./default_usestate');
 const email_check = require('./email_check');
 const hook_sequence = require('./hook_sequence');
 const img_src_cdn = require('./img_src_cdn');
@@ -29,6 +30,7 @@ module.exports = {
 		'key-in-for-each-map'         : key_in_for_each_map,
 		'key-as-function'             : key_as_function,
 		'zeroth-index-import'         : zeroth_index_import,
+		'default-usestate'            : default_usestate,
 		'hook-sequence'               : hook_sequence,
 		'component-pascal'            : component_pascal,
 	},

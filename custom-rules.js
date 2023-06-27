@@ -24,6 +24,7 @@ module.exports = {
 		'custom-rules/key-as-function'             : 'warn',
 		'custom-rules/key-in-for-each-map'         : 'warn',
 		'custom-rules/zeroth-index-import'         : 'warn',
+		'custom-rules/default-usestate'            : 'warn',
 		'custom-rules/hook-sequence'               : 'warn',
 		'custom-rules/component-pascal'            : 'warn',
 	},
