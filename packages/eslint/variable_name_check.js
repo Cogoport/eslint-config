@@ -17,7 +17,7 @@ module.exports = {
 					node.parent.kind === 'let'
                     && node.type === 'VariableDeclarator'
 				) {
-					const variableName = node.id.name;
+					const variableName = node.id?.name;
 					if (variableName
 						&& !VARIABLE_NAME_REGEX.test(
 							variableName,
