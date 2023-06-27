@@ -12,6 +12,7 @@ const is_empty_use_check = require('./is_empty_use_check');
 const key_as_function = require('./key_as_function');
 const key_in_for_each_map = require('./key_in_for_each_map');
 const nbsp_ensp_check = require('./nbsp_ensp_check');
+const no_hook_conditional_import = require('./no_hook_conditional_import');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
 const variable_name_check = require('./variable_name_check');
@@ -36,6 +37,7 @@ module.exports = {
 		'default-usestate'            : default_usestate,
 		'hook-sequence'               : hook_sequence,
 		'variable-name-check'         : variable_name_check,
+		'no-hook-conditional-import'  : no_hook_conditional_import,
 		'component-pascal'            : component_pascal,
 		'variable-value-jsx'          : variable_value_jsx,
 		'default-component-props'     : default_comp_props,
