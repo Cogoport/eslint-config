@@ -12,7 +12,7 @@ const findKeyAttribute = (attributes) => {
 const checkIsVariablePushedIsJsx = (variables, currentVarName) => {
 	const currentVarNode = variables?.find((v) => v.name === currentVarName);
 
-	if (!isNodeTypeJSX(currentVarNode?.defs?.[0]?.node?.init.type)) return false;
+	if (!isNodeTypeJSX(currentVarNode?.defs?.[0]?.node?.init?.type)) return false;
 
 	const attributes = currentVarNode.defs?.[0].node?.init?.openingElement?.attributes;
 

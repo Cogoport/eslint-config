@@ -1,6 +1,6 @@
 const check_element_role_button = require('./check_element_role_button');
 const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
-const component_pascal = require('./component_pascal');
+const component_pascal_props = require('./component_pascal_and_props');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
 const default_usestate = require('./default_usestate');
@@ -32,6 +32,6 @@ module.exports = {
 		'zeroth-index-import'         : zeroth_index_import,
 		'default-usestate'            : default_usestate,
 		'hook-sequence'               : hook_sequence,
-		'component-pascal'            : component_pascal,
+		'component-pascal-props'      : component_pascal_props,
 	},
 };
