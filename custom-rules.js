@@ -26,6 +26,7 @@ module.exports = {
 		'custom-rules/zeroth-index-import'         : 'warn',
 		'custom-rules/default-usestate'            : 'warn',
 		'custom-rules/hook-sequence'               : 'warn',
+		'custom-rules/variable-name-check'         : 'warn',
 		'custom-rules/component-pascal-props'      : 'warn',
 	},
 };

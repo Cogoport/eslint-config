@@ -13,6 +13,7 @@ const key_in_for_each_map = require('./key_in_for_each_map');
 const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
+const variable_name_check = require('./variable_name_check');
 const zeroth_index_import = require('./zeroth_index_import');
 
 module.exports = {
@@ -32,6 +33,7 @@ module.exports = {
 		'zeroth-index-import'         : zeroth_index_import,
 		'default-usestate'            : default_usestate,
 		'hook-sequence'               : hook_sequence,
+		'variable-name-check'         : variable_name_check,
 		'component-pascal-props'      : component_pascal_props,
 	},
 };
