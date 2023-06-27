@@ -4,8 +4,7 @@ module.exports = {
 	meta: {
 		type : 'warn',
 		docs : {
-			description:
-                'Enforce camelCase or snake_case naming for variables declared within functional components',
+			description : 'Enforce camelCase or snake_case naming for variables declared within functional components',
 			category    : 'Best Practices',
 			recommended : true,
 		},
@@ -19,15 +18,14 @@ module.exports = {
                     && node.type === 'VariableDeclarator'
 				) {
 					const variableName = node.id.name;
-					if (
-						!VARIABLE_NAME_REGEX.test(
+					if (variableName
+						&& !VARIABLE_NAME_REGEX.test(
 							variableName,
 						)
 					) {
 						context.report({
 							node,
-							message:
-                                'Variable name within a function component should either be in camelCase or snake_case',
+							message: 'Variable name within a functional component should be in camelCase or snake_case',
 						});
 					}
 				}
