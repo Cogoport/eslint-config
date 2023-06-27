@@ -27,6 +27,8 @@ module.exports = {
 		'custom-rules/default-usestate'            : 'warn',
 		'custom-rules/hook-sequence'               : 'warn',
 		'custom-rules/variable-name-check'         : 'warn',
-		'custom-rules/component-pascal-props'      : 'warn',
+		'custom-rules/component-pascal'            : 'warn',
+		'custom-rules/variable-value-jsx'          : 'warn',
+		'custom-rules/default-component-props'     : 'warn',
 	},
 };

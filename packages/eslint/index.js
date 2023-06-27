@@ -1,8 +1,9 @@
 const check_element_role_button = require('./check_element_role_button');
 const cl_for_merging_styles_class = require('./cl_for_merging_styles_class');
-const component_pascal_props = require('./component_pascal_and_props');
+const component_pascal = require('./component_pascal');
 const custom_rules_matching = require('./custom_rules_matching');
 const date_time_format_check = require('./date_time_format_check');
+const default_comp_props = require('./default_comp_props');
 const default_usestate = require('./default_usestate');
 const email_check = require('./email_check');
 const hook_sequence = require('./hook_sequence');
@@ -14,6 +15,7 @@ const nbsp_ensp_check = require('./nbsp_ensp_check');
 const regex_check = require('./regex_check');
 const uuid_check = require('./uuid_check');
 const variable_name_check = require('./variable_name_check');
+const variable_value_jsx = require('./variable_value_jsx');
 const zeroth_index_import = require('./zeroth_index_import');
 
 module.exports = {
@@ -34,6 +36,8 @@ module.exports = {
 		'default-usestate'            : default_usestate,
 		'hook-sequence'               : hook_sequence,
 		'variable-name-check'         : variable_name_check,
-		'component-pascal-props'      : component_pascal_props,
+		'component-pascal'            : component_pascal,
+		'variable-value-jsx'          : variable_value_jsx,
+		'default-component-props'     : default_comp_props,
 	},
 };
