@@ -1,5 +1,5 @@
-const HOOK_SEQUENCE = ['useContext', 'useRouter', 'useTranslation', 'useSelector',
-	'useDispatch', 'useState', 'useRequest', 'useForm'];
+const HOOK_SEQUENCE = ['useRouter', 'useTranslation', 'useSelector',
+	'useDispatch', 'useContext', 'useState', 'useRequest', 'useForm'];
 
 const checkSequence = (current, sequence) => {
 	const currentIndexInSeq = HOOK_SEQUENCE.findIndex((i) => i === current);

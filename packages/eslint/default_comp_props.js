@@ -39,20 +39,10 @@ module.exports = {
 		return {
 			ReturnStatement(node) {
 				if (['JSXFragment', 'JSXElement'].includes(node.argument?.type) && node.parent?.parent?.id?.name) {
-					const isPascal = /^([A-Z][a-z0-9]*)+$/.test(node.parent?.parent?.id?.name);
-
 					const parent = node?.parent?.parent;
 
 					if (isNodeTypeFunction(parent?.type) && parent?.params?.length) {
 						checkForPropsDefault(parent?.params?.[0], context);
-					}
-
-					if (!isPascal) {
-						context.report({
-							node,
-							message : 'React component names should be in PascalCase.',
-							loc     : node.parent.parent.parent.loc,
-						});
 					}
 				}
 			},
