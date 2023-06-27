@@ -17,7 +17,7 @@ module.exports = {
 				if (node.callee.name === 'useState'
 				) {
 					const [initialValue] = node.arguments;
-					if (!initialValue || (initialValue.length === 0)) {
+					if (!initialValue) {
 						context.report({
 							node,
 							message: ERROR_MESSAGE,
