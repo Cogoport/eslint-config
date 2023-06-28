@@ -8,7 +8,6 @@ const DEFAULT_ELEMENT = 0;
 
 module.exports = {
 	meta: {
-		name           : 'eslint-plugin-custom-rules',
 		version        : '1.0.0',
 		type           : 'problem',
 		hasSuggestions : true,
