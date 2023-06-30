@@ -20,7 +20,7 @@ const zeroth_index_import = require('./zeroth_index_import');
 
 module.exports = {
 	rules: {
-		'custom-rules-matching'       : custom_rules_matching,
+		'custom-eslint-matching'       : custom_rules_matching,
 		'img-src-cdn'                 : img_src_cdn,
 		'regex-check'                 : regex_check,
 		'nbsp-ensp-check'             : nbsp_ensp_check,

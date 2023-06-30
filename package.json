@@ -1,6 +1,6 @@
 {
   "name": "@cogoport/eslint-config",
-  "version": "1.1.1-beta.10",
+  "version": "1.1.1-beta.17",
   "description": "ESLint Config by Cogoport",
   "repository": "git@github.com:Cogoport/eslint-config.git",
   "license": "MIT",
