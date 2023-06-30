@@ -3,7 +3,7 @@ const overrides = require('./overrides');
 const MAXIMUM_LENGTH = 250;
 module.exports = {
 	extends       : ['airbnb', 'airbnb/hooks'],
-	plugins       : ['custom-rules'],
+	plugins       : ['custom-eslint'],
 	parserOptions : { ecmaVersion: 2020 },
 	rules         : {
 		...overrides.base,
