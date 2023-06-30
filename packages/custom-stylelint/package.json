@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-custom-rules",
+  "name": "stylelint-plugin-custom-style",
   "version": "1.0.0",
-  "description": "",
+  "description": "Custom style plugin for stylelint",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
