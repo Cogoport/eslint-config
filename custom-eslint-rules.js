@@ -10,7 +10,7 @@ module.exports = {
 		...overrides.react,
 		'max-lines-per-function'                    : ['error', MAXIMUM_LENGTH],
 		'no-magic-numbers'                          : ['error', { ignoreDefaultValues: true }],
-		'custom-eslint/custom-eslint-matching'      : 'error',
+		'custom-eslint/variables-name-check'        : 'error',
 		'custom-eslint/img-src-cdn'                 : 'warn',
 		'custom-eslint/regex-check'                 : 'warn',
 		'custom-eslint/nbsp-ensp-check'             : 'warn',
