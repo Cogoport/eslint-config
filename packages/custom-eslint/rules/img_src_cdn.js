@@ -6,7 +6,7 @@ const URL_TO_CHECK = ['https://cdn.cogoport.io', 'https://cogoport-production.sg
 
 const ERROR_MESSAGE = 'Move image url to global constants and use it from there.';
 
-const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants/globals.js';
+const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants/globals';
 
 const isTypeofValueString = (value) => typeof value === 'string';
 
