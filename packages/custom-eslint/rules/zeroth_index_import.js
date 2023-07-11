@@ -20,7 +20,7 @@ module.exports = {
 
 		return {
 			VariableDeclarator(node) {
-				if (node?.init?.value === ARRAY_FIRST_ELEMENT) {
+				if (node?.init?.value === ARRAY_FIRST_ELEMENT && node?.parent?.kind === 'const') {
 					ZERO_VALUE_VARIABLES.push(node?.id?.name);
 				}
 			},
