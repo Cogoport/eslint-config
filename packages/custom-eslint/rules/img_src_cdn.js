@@ -6,8 +6,6 @@ const URL_TO_CHECK = ['https://cdn.cogoport.io', 'https://cogoport-production.sg
 
 const ERROR_MESSAGE = 'Move image url to global constants and use it from there.';
 
-const GLOBAL_CONSTANT_FILE_PATH = 'globalization/constants/globals';
-
 const isTypeofValueString = (value) => typeof value === 'string';
 
 const isTypeLiteral = (value) => value?.type === 'Literal';
@@ -60,15 +58,13 @@ module.exports = {
 		schema: [],
 	},
 	create(context) {
-		let declaredVariable = null;
-
 		return {
 			VariableDeclarator(node) {
-				if (node.init && isTypeLiteral(node.init) && isTypeofValueString(node.init.value)) {
-					declaredVariable = node;
+				if (node.init && isTypeLiteral(node.init) && isTypeofValueString(node?.init?.value)) {
+					checkIsUrlPresent(node, context, node?.init?.value);
 				}
 
-				if (node.init && ['ObjectExpression', 'ArrayExpression'].includes(node.init.type)) {
+				if (node.init && ['ObjectExpression', 'ArrayExpression'].includes(node?.init?.type)) {
 					if (node.init.type === 'ObjectExpression') {
 						checkProperties(node.init.properties, context);
 					} else {
@@ -77,23 +73,12 @@ module.exports = {
 				}
 			},
 			JSXOpeningElement(node) {
-				if (['Image', 'img'].includes(node.name.name)) {
-					const srcAttribute = node.attributes.find((attr) => attr.name.name === 'src');
+				if (['Image', 'img'].includes(node?.name?.name)) {
+					const srcAttribute = node.attributes?.find((attr) => attr?.name?.name === 'src');
 
-					if (srcAttribute && URL_TO_CHECK.some((u) => srcAttribute.value.value?.includes(u))
-                        && !declaredVariable) {
+					if (srcAttribute && URL_TO_CHECK.some((u) => srcAttribute?.value?.value?.includes(u))
+					) {
 						handleShowUrlError(srcAttribute, context);
-					} else if (srcAttribute) {
-						const importStatements = context.getSourceCode()
-							.ast.body.filter((statement) => statement.type === 'ImportDeclaration');
-
-						const hasMatchingImport = importStatements
-							.some((statement) => statement.source.value
-								?.includes(GLOBAL_CONSTANT_FILE_PATH));
-
-						if (!hasMatchingImport) {
-							handleShowUrlError(node, context);
-						}
 					}
 				}
 			},
