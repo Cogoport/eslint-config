@@ -53,7 +53,7 @@ module.exports = {
 
 					context.report({
 						node    : specifier,
-						message : 'Wrong import! Import from the "react" package.',
+						message : `Wrong import! Import ${specifier.imported.name} from the "react" package.`,
 					});
 				});
 			},
