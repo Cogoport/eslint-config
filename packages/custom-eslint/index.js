@@ -7,6 +7,7 @@ const default_usestate = require('./rules/default_usestate');
 const email_check = require('./rules/email_check');
 const hook_sequence = require('./rules/hook_sequence');
 const img_src_cdn = require('./rules/img_src_cdn');
+const import_from_react = require('./rules/import_from_react');
 const is_empty_use_check = require('./rules/is_empty_use_check');
 const key_as_function = require('./rules/key_as_function');
 const key_in_for_each_map = require('./rules/key_in_for_each_map');
@@ -39,5 +40,6 @@ module.exports = {
 		'component-pascal'            : component_pascal,
 		'variable-value-jsx'          : variable_value_jsx,
 		'default-component-props'     : default_comp_props,
+		'import-from-react'           : import_from_react,
 	},
 };
