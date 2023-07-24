@@ -5,6 +5,7 @@ const date_time_format_check = require('./rules/date_time_format_check');
 const default_comp_props = require('./rules/default_comp_props');
 const default_usestate = require('./rules/default_usestate');
 const email_check = require('./rules/email_check');
+const function_name_check = require('./rules/function_name_check');
 const hook_sequence = require('./rules/hook_sequence');
 const img_src_cdn = require('./rules/img_src_cdn');
 const import_from_react = require('./rules/import_from_react');
@@ -40,6 +41,8 @@ module.exports = {
 		'component-pascal'            : component_pascal,
 		'variable-value-jsx'          : variable_value_jsx,
 		'default-component-props'     : default_comp_props,
+		// new
 		'import-from-react'           : import_from_react,
+		'function-name-check'         : function_name_check,
 	},
 };

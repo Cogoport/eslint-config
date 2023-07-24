@@ -30,6 +30,7 @@ module.exports = {
 		'custom-eslint/variable-value-jsx'          : 'warn',
 		'custom-eslint/default-component-props'     : 'warn',
 		// new
-		'custom-eslint/import-from-react'          	: 'error',
+		'custom-eslint/import-from-react'           : 'error',
+		'custom-eslint/function-name-check'         : 'error',
 	},
 };
