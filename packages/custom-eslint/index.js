@@ -8,6 +8,7 @@ const email_check = require('./rules/email_check');
 const function_name_check = require('./rules/function_name_check');
 const hook_sequence = require('./rules/hook_sequence');
 const img_src_cdn = require('./rules/img_src_cdn');
+const import_from_package_utils = require('./rules/import_from_package_utils');
 const is_empty_use_check = require('./rules/is_empty_use_check');
 const key_as_function = require('./rules/key_as_function');
 const key_in_for_each_map = require('./rules/key_in_for_each_map');
@@ -44,5 +45,6 @@ module.exports = {
 		// new
 		'import-from-react'           : import_from_react,
 		'function-name-check'         : function_name_check,
+		'import-from-package-utils'   : import_from_package_utils,
 	},
 };

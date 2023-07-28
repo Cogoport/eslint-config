@@ -32,5 +32,6 @@ module.exports = {
 		// new
 		'custom-eslint/import-from-react'           : 'error',
 		'custom-eslint/function-name-check'         : 'error',
+		'custom-eslint/import-from-package-utils'   : 'error',
 	},
 };
