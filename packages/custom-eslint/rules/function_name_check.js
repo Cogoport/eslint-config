@@ -18,7 +18,7 @@ const CASE_MAPPING = {
 	message: {
 		PascalCase : "Function '{{functionName}}' is returning JSX and should be named using PascalCase",
 		camelCase  : "Function '{{functionName}}' is not returning JSX and should be named using camelCase",
-	}
+	},
 };
 
 function checkNameCase({ name, expectedCase }) {
@@ -44,7 +44,7 @@ const validateFunctionName = ({ name, isJSXReturn = false, context, node }) => {
 
 	context.report({
 		node,
-		message: message
+		message,
 	});
 };
 
@@ -71,9 +71,11 @@ module.exports = {
 			// 	});
 			// },
 			ArrowFunctionExpression(node) {
+				if (!['VariableDeclarator'].includes(node.parent.type)) return;
+
 				validateFunctionName({
 					context,
-					node: node.parent,
+					node        : node.parent,
 					name        : node.parent.id.name,
 					isJSXReturn : hasJSXElement(node.body),
 				});
@@ -87,13 +89,15 @@ module.exports = {
 				});
 			},
 			FunctionExpression(node) {
+				if (!['VariableDeclarator'].includes(node.parent.type)) return;
+
 				validateFunctionName({
-				  context,
-				  node: node.parent,
-				  name: node.parent.id.name,
-				  isJSXReturn: hasJSXElement(node.body)
+					context,
+					node        : node.parent,
+					name        : node.parent.id.name,
+					isJSXReturn : hasJSXElement(node.body),
 				});
-			}
+			},
 		};
 	},
 };

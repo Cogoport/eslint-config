@@ -62,11 +62,10 @@ module.exports = {
 	create(context) {
 		return {
 			ImportDeclaration(node) {
-				if (node.source.value === '@cogoport/utils') {
-					return;
-				}
+				if (node.source.value === '@cogoport/utils') return;
 
 				node.specifiers.forEach((specifier) => {
+					if (!specifier.imported) return;
 					if (!COGOPORT_UTILS_BUILT_IN_IMPORTS.includes(specifier.imported.name)) return;
 
 					context.report({

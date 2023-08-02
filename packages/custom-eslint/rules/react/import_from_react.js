@@ -49,6 +49,7 @@ module.exports = {
 				if (node.source.value === 'react') return;
 
 				node.specifiers.forEach((specifier) => {
+					if (!specifier.imported) return;
 					if (!REACT_BUILT_IN_IMPORTS.includes(specifier.imported.name)) return;
 
 					context.report({
