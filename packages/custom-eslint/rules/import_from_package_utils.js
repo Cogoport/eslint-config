@@ -21,6 +21,7 @@ const COGOPORT_UTILS_BUILT_IN_IMPORTS_HASH = {
 		'upperCase',
 		'pascalCase',
 		'toWords',
+		'camelCase',
 	],
 	browser : ['isBrowser', 'getCookie', 'setCookie', 'deleteCookie', 'copyToClipboard'],
 	dates   : [
@@ -43,7 +44,6 @@ const COGOPORT_UTILS_BUILT_IN_IMPORTS_HASH = {
 		'format',
 		'endOfWeek',
 		'startOfWeek',
-		'camelCase',
 	],
 };
 
