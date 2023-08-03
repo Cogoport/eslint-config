@@ -5,12 +5,15 @@ const date_time_format_check = require('./rules/date_time_format_check');
 const default_comp_props = require('./rules/default_comp_props');
 const default_usestate = require('./rules/default_usestate');
 const email_check = require('./rules/email_check');
+const function_name_check = require('./rules/function_name_check');
 const hook_sequence = require('./rules/hook_sequence');
 const img_src_cdn = require('./rules/img_src_cdn');
+const import_from_package_utils = require('./rules/import_from_package_utils');
 const is_empty_use_check = require('./rules/is_empty_use_check');
 const key_as_function = require('./rules/key_as_function');
 const key_in_for_each_map = require('./rules/key_in_for_each_map');
 const nbsp_ensp_check = require('./rules/nbsp_ensp_check');
+const import_from_react = require('./rules/react/import_from_react');
 const regex_check = require('./rules/regex_check');
 const uuid_check = require('./rules/uuid_check');
 const variable_name_check = require('./rules/variable_name_check');
@@ -39,5 +42,9 @@ module.exports = {
 		'component-pascal'            : component_pascal,
 		'variable-value-jsx'          : variable_value_jsx,
 		'default-component-props'     : default_comp_props,
+		// new
+		'import-from-react'           : import_from_react,
+		'function-name-check'         : function_name_check,
+		'import-from-package-utils'   : import_from_package_utils,
 	},
 };

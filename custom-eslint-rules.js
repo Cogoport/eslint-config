@@ -29,5 +29,9 @@ module.exports = {
 		'custom-eslint/component-pascal'            : 'warn',
 		'custom-eslint/variable-value-jsx'          : 'warn',
 		'custom-eslint/default-component-props'     : 'warn',
+		// new
+		'custom-eslint/import-from-react'           : 'error',
+		'custom-eslint/function-name-check'         : 'error',
+		'custom-eslint/import-from-package-utils'   : 'error',
 	},
 };
