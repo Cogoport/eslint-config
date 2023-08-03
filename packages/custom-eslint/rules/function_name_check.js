@@ -1,13 +1,20 @@
-const isJSX = (type) => ['JSXFragment', 'JSXElement'].includes(type);
-
 const hasJSXElement = (node) => {
 	if (!node) return false;
 
-	if (isJSX(node.type) || (node.type === 'ReturnStatement' && isJSX(node.argument.type))) return true;
+	const NODE_TYPE_CHECK_HAS_JSX_ELEMENT_MAPPING = {
+		JSXFragment             : () => true,
+		JSXElement              : () => true,
+		BlockStatement          : () => node.body.some(hasJSXElement),
+		IfStatement             : () => hasJSXElement(node.consequent),
+		CallExpression          : () => node.arguments.some(hasJSXElement),
+		ArrowFunctionExpression : () => hasJSXElement(node.body),
+		ConditionalExpression   : () => hasJSXElement(node.consequent),
+		ReturnStatement         : () => hasJSXElement(node.argument),
+	};
 
-	if (node.type === 'BlockStatement') return node.body.some(hasJSXElement);
+	const functionRef = NODE_TYPE_CHECK_HAS_JSX_ELEMENT_MAPPING[node.type] || null;
 
-	return false;
+	return functionRef?.() || false;
 };
 
 const CASE_MAPPING = {
