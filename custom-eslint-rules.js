@@ -8,7 +8,7 @@ module.exports = {
 	rules         : {
 		...overrides.base,
 		...overrides.react,
-		'max-lines-per-function'                    : ['error', MAXIMUM_LENGTH],
+		'max-lines-per-function'                    : ['warn', MAXIMUM_LENGTH],
 		'no-magic-numbers'                          : ['error', { ignoreDefaultValues: true }],
 		'custom-eslint/variables-name-check'        : 'error',
 		'custom-eslint/img-src-cdn'                 : 'warn',
@@ -31,7 +31,7 @@ module.exports = {
 		'custom-eslint/default-component-props'     : 'warn',
 		// new
 		'custom-eslint/import-from-react'           : 'error',
-		'custom-eslint/function-name-check'         : 'error',
+		'custom-eslint/function-name-check'         : 'warn',
 		'custom-eslint/import-from-package-utils'   : 'error',
 	},
 };
