@@ -33,6 +33,36 @@ const REACT_BUILT_IN_IMPORTS_HASH = {
 
 const REACT_BUILT_IN_IMPORTS = Object.values(REACT_BUILT_IN_IMPORTS_HASH).flat();
 
+const SOURCE_VALUE_FUNCTION_MAPPING = {
+	react({ context, specifier }) {
+		if (specifier.imported.name !== 'React') return;
+
+		context.report({
+			node    : specifier,
+			message : 'Incorrect import! Import \'React\' as the default package.',
+		});
+	},
+	others({ context, specifier }) {
+		if (!REACT_BUILT_IN_IMPORTS.includes(specifier.imported.name)) return;
+
+		context.report({
+			node    : specifier,
+			message : `Incorrect import! Import '${specifier.imported.name}' from the 'react' package.`,
+		});
+	},
+};
+
+const SPECIFIER_TYPE_FUNCTION_MAPPING = {
+	// ImportDefaultSpecifier({ context, node, specifier }) { },
+	ImportSpecifier({ context, node, specifier }) {
+		const functionRef = SOURCE_VALUE_FUNCTION_MAPPING[node.source.value] || SOURCE_VALUE_FUNCTION_MAPPING.others;
+
+		if (typeof functionRef !== 'function') return;
+
+		functionRef({ context, specifier });
+	},
+};
+
 module.exports = {
 	meta: {
 		type : 'error',
@@ -46,16 +76,22 @@ module.exports = {
 	create(context) {
 		return {
 			ImportDeclaration(node) {
-				if (node.source.value === 'react') return;
+				if (node.specifiers.length === 0) {
+					context.report({
+						node,
+						// eslint-disable-next-line max-len
+						message: `Remove this import statement,since there is no import from the '${node.source.value}' package.`,
+					});
+
+					return;
+				}
 
 				node.specifiers.forEach((specifier) => {
-					if (!specifier.imported) return;
-					if (!REACT_BUILT_IN_IMPORTS.includes(specifier.imported.name)) return;
+					const functionRef = SPECIFIER_TYPE_FUNCTION_MAPPING[specifier.type];
 
-					context.report({
-						node    : specifier,
-						message : `Wrong import! Import ${specifier.imported.name} from the "react" package.`,
-					});
+					if (typeof functionRef !== 'function') return;
+
+					functionRef({ context, node, specifier });
 				});
 			},
 		};
