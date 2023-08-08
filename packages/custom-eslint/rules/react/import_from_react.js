@@ -39,7 +39,7 @@ const SOURCE_VALUE_FUNCTION_MAPPING = {
 
 		context.report({
 			node    : specifier,
-			message : 'Incorrect import! Import \'React\' as the default package.',
+			message : "Incorrect import! Import 'React' as the default package.",
 		});
 	},
 	others({ context, specifier }) {
